@@ -1,17 +1,60 @@
-# Supabase Schema — What I Need from You
+# Supabase Schema — Setup Instructions
 
-To complete the client portal, I need your **exact** Supabase table structure. 
+## ✅ Sample Data Included!
 
-## How to Find It
+The app comes with **complete sample data** ready to test. Follow these steps:
+
+## Setup Instructions
+
+### Step 1: Run the SQL Schema
 
 1. Go to your Supabase dashboard: https://app.supabase.com/
-2. Select your project
-3. Go to **SQL Editor** or **Tables** section
-4. Take a screenshot or copy the table definitions
+2. Select your **niche-design-studio** project (or your project name)
+3. Go to **SQL Editor**
+4. Open `SETUP_SCHEMA.sql` from this repo
+5. Copy the entire SQL script
+6. Paste into Supabase SQL Editor
+7. Click **Run**
+
+This creates:
+- `clients` table with 1 sample client
+- `projects` table with 3 sample projects
+- `timelines` table with 13 sample phases
+- `files` table with 10 sample files
+- RLS policies for security
+- Indexes for performance
+
+### Step 2: Test the Portal
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Run dev server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open http://localhost:3000
+
+4. Login with:
+   ```
+   Email: sarah@techstartup.com
+   ```
+
+5. You'll see:
+   - Dashboard with 3 projects
+   - Brand Identity (65% complete, 5 timeline phases, 4 files)
+   - Website Redesign (20% complete, 5 timeline phases, 3 files)
+   - Marketing Materials (100% complete, 3 timeline phases, 3 files)
+   - Click projects to view their files and timelines
+
+## When You Have Real Data
+
+Once you're ready to add your actual client data:
 
 ## What to Share
-
-For each table (clients, projects, files, timelines), tell me:
 
 ### Example Format:
 

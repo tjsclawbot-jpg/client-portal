@@ -2,14 +2,15 @@
 
 A client project management portal built with Next.js, TypeScript, Tailwind CSS, and Supabase.
 
-## Features (Planned)
+## Features
 
 ✅ **Client Authentication** — Login via email
-✅ **Project Dashboard** — View all projects and progress
+✅ **Project Dashboard** — View all projects and progress stats
 ✅ **Progress Tracker** — Visual progress bars with completion percentage
-🔲 **File Browser** — Download brand guidelines and project files
-🔲 **Timeline View** — See project milestones and deadlines
-🔲 **Notifications** — Email alerts for project updates
+✅ **File Browser** — Download brand guidelines and project files
+✅ **Timeline View** — See project milestones with completion status
+✅ **Project Selection** — Click to view files and timelines for each project
+✅ **Sample Data Included** — Demo client ready to test
 
 ## Tech Stack
 
