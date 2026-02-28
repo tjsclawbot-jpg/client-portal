@@ -49,234 +49,362 @@ CREATE TABLE IF NOT EXISTS files (
 );
 
 -- ============================================
--- SAMPLE DATA - EXAMPLE CLIENT
+-- SAMPLE DATA - EXAMPLE: NICHE DESIGN STUDIO
 -- ============================================
 
--- Insert sample client
+-- Insert sample client (Niche Design Studio)
 INSERT INTO clients (email, name, company) VALUES
-('sarah@techstartup.com', 'Sarah Chen', 'TechStartup Inc.');
+('tj@nichedesignstudio.com', 'Tj Cichecki', 'Niche Design Studio');
 
--- Get the client ID (you'll reference this)
--- Save this ID to use below - typically it's: 12345678-1234-1234-1234-123456789012
-
--- For demo purposes, we'll use this hardcoded ID in the inserts below
--- In real usage, you'd get the actual UUID
-
--- Insert sample projects for the example client
+-- Insert comprehensive branding + web design project
 INSERT INTO projects (client_id, name, description, status, progress, start_date, end_date) VALUES
 (
-  (SELECT id FROM clients WHERE email = 'sarah@techstartup.com'),
-  'Brand Identity Design',
-  'Complete visual identity system including logo, color palette, typography, and brand guidelines.',
+  (SELECT id FROM clients WHERE email = 'tj@nichedesignstudio.com'),
+  'Niche Design Studio — Brand & Web Identity',
+  'Complete visual identity system and responsive website redesign. Includes brand strategy, logo design, typography system, color palette, brand guidelines, website redesign, and web implementation.',
   'in_progress',
-  65,
-  '2025-01-15',
-  '2025-03-31'
-),
-(
-  (SELECT id FROM clients WHERE email = 'sarah@techstartup.com'),
-  'Website Redesign',
-  'Modern, responsive website redesign with focus on user experience and conversion optimization.',
-  'planning',
-  20,
+  72,
   '2025-02-01',
-  '2025-04-30'
-),
-(
-  (SELECT id FROM clients WHERE email = 'sarah@techstartup.com'),
-  'Marketing Materials',
-  'Business cards, letterhead, social media templates, and marketing collateral.',
-  'completed',
-  100,
-  '2024-11-01',
-  '2025-01-31'
+  '2025-05-15'
 );
 
--- Insert sample timelines
+-- Insert comprehensive timeline phases
 INSERT INTO timelines (project_id, phase_name, due_date, completed, "order") VALUES
--- Brand Identity phases
+-- Discovery & Strategy Phase
 (
-  (SELECT id FROM projects WHERE name = 'Brand Identity Design' LIMIT 1),
-  'Discovery & Strategy',
-  '2025-01-31',
-  TRUE,
-  1
-),
-(
-  (SELECT id FROM projects WHERE name = 'Brand Identity Design' LIMIT 1),
-  'Logo Design (3 Concepts)',
-  '2025-02-14',
-  TRUE,
-  2
-),
-(
-  (SELECT id FROM projects WHERE name = 'Brand Identity Design' LIMIT 1),
-  'Revisions & Refinement',
-  '2025-02-28',
-  FALSE,
-  3
-),
-(
-  (SELECT id FROM projects WHERE name = 'Brand Identity Design' LIMIT 1),
-  'Brand Guidelines Document',
-  '2025-03-15',
-  FALSE,
-  4
-),
-(
-  (SELECT id FROM projects WHERE name = 'Brand Identity Design' LIMIT 1),
-  'Final Deliverables',
-  '2025-03-31',
-  FALSE,
-  5
-),
-
--- Website Redesign phases
-(
-  (SELECT id FROM projects WHERE name = 'Website Redesign' LIMIT 1),
-  'Requirements & Planning',
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Phase 1: Discovery & Brand Strategy',
   '2025-02-15',
-  FALSE,
+  TRUE,
   1
 ),
 (
-  (SELECT id FROM projects WHERE name = 'Website Redesign' LIMIT 1),
-  'Wireframes & User Flows',
-  '2025-03-01',
-  FALSE,
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Brand Positioning Workshop',
+  '2025-02-10',
+  TRUE,
   2
 ),
 (
-  (SELECT id FROM projects WHERE name = 'Website Redesign' LIMIT 1),
-  'Design Mockups',
-  '2025-03-20',
-  FALSE,
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Competitive Analysis & Market Research',
+  '2025-02-15',
+  TRUE,
   3
 ),
+
+-- Visual Identity Phase
 (
-  (SELECT id FROM projects WHERE name = 'Website Redesign' LIMIT 1),
-  'Development & Testing',
-  '2025-04-15',
-  FALSE,
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Phase 2: Visual Identity Design',
+  '2025-03-31',
+  TRUE,
   4
 ),
 (
-  (SELECT id FROM projects WHERE name = 'Website Redesign' LIMIT 1),
-  'Launch',
-  '2025-04-30',
-  FALSE,
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Logo Concepts (3 directions)',
+  '2025-02-28',
+  TRUE,
   5
 ),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Logo Refinement & Approval',
+  '2025-03-15',
+  TRUE,
+  6
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Color Palette & Typography System',
+  '2025-03-25',
+  TRUE,
+  7
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Brand Guidelines Documentation',
+  '2025-03-31',
+  TRUE,
+  8
+),
 
--- Marketing Materials phases
+-- Web Design Phase
 (
-  (SELECT id FROM projects WHERE name = 'Marketing Materials' LIMIT 1),
-  'Design Concepts',
-  '2025-01-10',
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Phase 3: Web Design & Strategy',
+  '2025-04-15',
   TRUE,
-  1
+  9
 ),
 (
-  (SELECT id FROM projects WHERE name = 'Marketing Materials' LIMIT 1),
-  'Client Approval',
-  '2025-01-20',
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Website Strategy & User Research',
+  '2025-03-31',
   TRUE,
-  2
+  10
 ),
 (
-  (SELECT id FROM projects WHERE name = 'Marketing Materials' LIMIT 1),
-  'Final Production Files',
-  '2025-01-31',
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Wireframes & Information Architecture',
+  '2025-04-05',
   TRUE,
-  3
+  11
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Homepage & Key Pages Mockups',
+  '2025-04-15',
+  TRUE,
+  12
+),
+
+-- Development Phase
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Phase 4: Web Development & Testing',
+  '2025-05-10',
+  FALSE,
+  13
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Front-end Development',
+  '2025-04-25',
+  FALSE,
+  14
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'CMS Integration & Backend Setup',
+  '2025-05-01',
+  FALSE,
+  15
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Testing, QA & Browser Compatibility',
+  '2025-05-08',
+  FALSE,
+  16
+),
+
+-- Launch Phase
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Phase 5: Launch & Optimization',
+  '2025-05-15',
+  FALSE,
+  17
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'SEO Optimization & Analytics Setup',
+  '2025-05-12',
+  FALSE,
+  18
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Site Launch & Monitoring',
+  '2025-05-15',
+  FALSE,
+  19
 );
 
--- Insert sample files
+-- Insert comprehensive project files
 INSERT INTO files (project_id, file_name, file_type, file_url, file_size_mb, description) VALUES
--- Brand Identity files
+-- Brand Strategy & Research
 (
-  (SELECT id FROM projects WHERE name = 'Brand Identity Design' LIMIT 1),
-  'Brand_Guidelines_v2.pdf',
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Brand_Strategy_Document.pdf',
   'brand_guide',
-  'https://example.com/files/brand-guidelines.pdf',
-  2.4,
-  'Complete brand guidelines including logo usage, color palette, and typography rules'
+  'https://example.com/files/brand-strategy.pdf',
+  3.2,
+  'Complete brand strategy including positioning, messaging, target audience, and brand pillars'
 ),
 (
-  (SELECT id FROM projects WHERE name = 'Brand Identity Design' LIMIT 1),
-  'Logo_Primary_Files.zip',
-  'logo',
-  'https://example.com/files/logos-primary.zip',
-  5.8,
-  'Primary logo in various formats (PNG, SVG, EPS, PDF)'
-),
-(
-  (SELECT id FROM projects WHERE name = 'Brand Identity Design' LIMIT 1),
-  'Logo_Secondary_Files.zip',
-  'logo',
-  'https://example.com/files/logos-secondary.zip',
-  4.2,
-  'Secondary and icon variations'
-),
-(
-  (SELECT id FROM projects WHERE name = 'Brand Identity Design' LIMIT 1),
-  'Color_Palette_Definition.pdf',
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Competitive_Analysis_Report.pdf',
   'document',
-  'https://example.com/files/color-palette.pdf',
-  1.1,
-  'Detailed color specifications (RGB, HEX, CMYK, Pantone)'
+  'https://example.com/files/competitive-analysis.pdf',
+  2.8,
+  'Market research and competitor analysis with strategic recommendations'
 ),
 
--- Website Redesign files
+-- Logo & Brand Identity Files
 (
-  (SELECT id FROM projects WHERE name = 'Website Redesign' LIMIT 1),
-  'Website_Wireframes_v1.pdf',
-  'design_file',
-  'https://example.com/files/wireframes.pdf',
-  3.5,
-  'Initial wireframes for desktop and mobile views'
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Logo_Primary_All_Formats.zip',
+  'logo',
+  'https://example.com/files/logo-primary.zip',
+  8.5,
+  'Primary logo in all formats: PNG, SVG, EPS, PDF, Adobe Illustrator'
 ),
 (
-  (SELECT id FROM projects WHERE name = 'Website Redesign' LIMIT 1),
-  'Homepage_Mockup_Desktop.png',
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Logo_Secondary_Variations.zip',
+  'logo',
+  'https://example.com/files/logo-secondary.zip',
+  6.2,
+  'Secondary logos, icon mark, horizontal versions, and monochrome variants'
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Logo_Usage_Guidelines.pdf',
+  'brand_guide',
+  'https://example.com/files/logo-guidelines.pdf',
+  4.1,
+  'Detailed logo usage rules, clear space, sizing, color variations, and don'ts'
+),
+
+-- Typography & Color System
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Typography_System.pdf',
+  'brand_guide',
+  'https://example.com/files/typography.pdf',
+  2.6,
+  'Typography specifications: font families, weights, sizes, line-height, letter-spacing'
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Color_Palette_Specifications.pdf',
+  'brand_guide',
+  'https://example.com/files/color-palette.pdf',
+  1.9,
+  'Complete color palette with RGB, HEX, CMYK, Pantone specs, and usage guidelines'
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Brand_Color_Swatches.aco',
+  'brand_guide',
+  'https://example.com/files/brand-swatches.aco',
+  0.3,
+  'Adobe Photoshop color swatches for design tools'
+),
+
+-- Complete Brand Guidelines
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Comprehensive_Brand_Guidelines.pdf',
+  'brand_guide',
+  'https://example.com/files/brand-guidelines-complete.pdf',
+  8.7,
+  'Master brand guidelines document: mission, values, voice & tone, photography style, and all visual standards'
+),
+
+-- Web Design Mockups
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Website_Wireframes_Desktop_Mobile.pdf',
+  'design_file',
+  'https://example.com/files/wireframes-full.pdf',
+  5.4,
+  'Complete wireframes for desktop and mobile: homepage, services, portfolio, contact'
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Homepage_Design_Desktop.png',
   'mockup',
   'https://example.com/files/homepage-desktop.png',
-  8.2,
-  'Full-page mockup of homepage design'
+  12.1,
+  'Full-page mockup of homepage design on desktop (1920x1080)'
 ),
 (
-  (SELECT id FROM projects WHERE name = 'Website Redesign' LIMIT 1),
-  'Homepage_Mockup_Mobile.png',
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Homepage_Design_Mobile.png',
   'mockup',
   'https://example.com/files/homepage-mobile.png',
-  4.1,
-  'Mobile responsive version of homepage'
+  6.3,
+  'Responsive mobile version of homepage (375x812)'
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Services_Page_Design.png',
+  'mockup',
+  'https://example.com/files/services-page.png',
+  9.8,
+  'Services overview page design with card layouts'
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Portfolio_Page_Design.png',
+  'mockup',
+  'https://example.com/files/portfolio-page.png',
+  11.4,
+  'Portfolio gallery page showcasing work samples'
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Contact_Form_Design.png',
+  'mockup',
+  'https://example.com/files/contact-form.png',
+  5.2,
+  'Contact form and inquiry page design'
 ),
 
--- Marketing Materials files
+-- Web Assets & Component Library
 (
-  (SELECT id FROM projects WHERE name = 'Marketing Materials' LIMIT 1),
-  'Business_Cards_Print_Ready.pdf',
-  'document',
-  'https://example.com/files/business-cards.pdf',
-  1.8,
-  'Print-ready business card files'
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Web_Component_Library.zip',
+  'design_file',
+  'https://example.com/files/component-library.zip',
+  15.3,
+  'Reusable UI components: buttons, cards, forms, navigation, footer'
 ),
 (
-  (SELECT id FROM projects WHERE name = 'Marketing Materials' LIMIT 1),
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Photography_Style_Guide.pdf',
+  'brand_guide',
+  'https://example.com/files/photography-guide.pdf',
+  3.7,
+  'Photography style, mood, composition guidelines and approved image examples'
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Icon_Set.zip',
+  'design_file',
+  'https://example.com/files/icons.zip',
+  4.2,
+  'Complete icon set in SVG and PNG formats'
+),
+
+-- Development & Code Files
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'HTML_CSS_Style_Guide.pdf',
+  'document',
+  'https://example.com/files/style-guide.pdf',
+  2.1,
+  'CSS class naming conventions, spacing system, and code standards'
+),
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
+  'Website_GitHub_Repository.zip',
+  'design_file',
+  'https://example.com/files/website-repo.zip',
+  18.5,
+  'Complete website source code repository ready for development'
+),
+
+-- Marketing & Launch Materials
+(
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
   'Social_Media_Templates.zip',
   'design_file',
   'https://example.com/files/social-templates.zip',
-  12.5,
-  'Editable templates for LinkedIn, Twitter, Instagram, and Facebook'
+  14.2,
+  'Social media templates for LinkedIn, Instagram, Twitter, and Facebook posts'
 ),
 (
-  (SELECT id FROM projects WHERE name = 'Marketing Materials' LIMIT 1),
+  (SELECT id FROM projects WHERE name = 'Niche Design Studio — Brand & Web Identity' LIMIT 1),
   'Email_Signature_Template.html',
   'document',
   'https://example.com/files/email-signature.html',
-  0.2,
-  'HTML email signature template'
+  0.4,
+  'HTML email signature template with logo and branding'
 );
 
 -- ============================================

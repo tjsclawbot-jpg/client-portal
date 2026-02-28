@@ -12,6 +12,16 @@ A client project management portal built with Next.js, TypeScript, Tailwind CSS,
 ✅ **Project Selection** — Click to view files and timelines for each project
 ✅ **Sample Data Included** — Demo client ready to test
 
+## Sample Data
+
+The app comes with a **complete example project** ready to test:
+- **Client:** Niche Design Studio (tj@nichedesignstudio.com)
+- **Project:** Brand & Web Identity Design
+- **Status:** 72% Complete (19 timeline phases, 24 files)
+- **Scope:** Full branding + website redesign workflow
+
+See `SAMPLE_DATA.md` for detailed breakdown.
+
 ## Tech Stack
 
 - **Frontend:** Next.js 14 + TypeScript + Tailwind CSS
@@ -20,16 +30,18 @@ A client project management portal built with Next.js, TypeScript, Tailwind CSS,
 
 ## Quick Start
 
-### 1. Install Dependencies
+### 1. Set Up Supabase
 ```bash
-npm install
+# Go to: https://app.supabase.com
+# Select your project
+# Go to SQL Editor
+# Copy entire SETUP_SCHEMA.sql from this repo
+# Paste and run it
 ```
 
-### 2. Environment Variables
-The `.env.local` file is pre-configured with your Supabase credentials:
-```
-NEXT_PUBLIC_SUPABASE_URL=https://ofqyijlcqcvdtckdljnh.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key_here
+### 2. Install Dependencies
+```bash
+npm install
 ```
 
 ### 3. Run Development Server
@@ -38,23 +50,31 @@ npm run dev
 ```
 Visit http://localhost:3000
 
-### 4. Build for Production
+### 4. Login with Sample Data
+```
+Email: tj@nichedesignstudio.com
+(No password in demo)
+```
+
+You'll see the complete Niche Design Studio brand + web design project with all files and timelines.
+
+### 5. Build for Production
 ```bash
 npm run build
 npm start
 ```
 
-## Database Schema (TODO)
+## Database Schema
 
-⚠️ **CRITICAL:** Confirm your Supabase table structure. Current placeholder assumes:
+The app uses a standard project management structure with 4 tables:
 
 ### Required Tables
 
 **`clients`** table:
 ```
 - id (UUID, primary key)
+- email (text, unique) — used for login
 - name (text)
-- email (text, unique)
 - company (text, optional)
 - created_at (timestamp)
 ```
@@ -64,20 +84,12 @@ npm start
 - id (UUID, primary key)
 - client_id (FK → clients.id)
 - name (text)
-- status (text: 'in_progress', 'completed', 'on_hold', etc.)
-- progress (integer: 0-100)
 - description (text, optional)
+- status (text: 'planning', 'in_progress', 'review', 'completed')
+- progress (integer: 0-100)
+- start_date (date, optional)
+- end_date (date, optional)
 - created_at (timestamp)
-```
-
-**`files`** table:
-```
-- id (UUID, primary key)
-- project_id (FK → projects.id)
-- file_name (text)
-- file_url (text) — path to Supabase Storage
-- file_type (text: 'brand_guide', 'logo', 'design_file', etc.)
-- uploaded_at (timestamp)
 ```
 
 **`timelines`** table:
@@ -87,8 +99,23 @@ npm start
 - phase_name (text)
 - due_date (date)
 - completed (boolean)
-- order (integer)
+- order (integer) — for sorting phases
+- created_at (timestamp)
 ```
+
+**`files`** table:
+```
+- id (UUID, primary key)
+- project_id (FK → projects.id)
+- file_name (text)
+- file_type (text: 'brand_guide', 'logo', 'design_file', 'mockup', 'document', 'other')
+- file_url (text) — path to Supabase Storage or external URL
+- file_size_mb (decimal, optional)
+- description (text, optional)
+- uploaded_at (timestamp)
+```
+
+The `SETUP_SCHEMA.sql` file creates all these tables with the sample data.
 
 ## Next Steps
 

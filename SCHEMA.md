@@ -2,29 +2,28 @@
 
 ## ✅ Sample Data Included!
 
-The app comes with **complete sample data** ready to test. Follow these steps:
+The app comes with a **comprehensive example** of a Niche Design Studio branding + web design project. Follow these steps to see it in action.
 
 ## Setup Instructions
 
 ### Step 1: Run the SQL Schema
 
 1. Go to your Supabase dashboard: https://app.supabase.com/
-2. Select your **niche-design-studio** project (or your project name)
+2. Select your project
 3. Go to **SQL Editor**
-4. Open `SETUP_SCHEMA.sql` from this repo
-5. Copy the entire SQL script
-6. Paste into Supabase SQL Editor
-7. Click **Run**
+4. Copy the entire `SETUP_SCHEMA.sql` from this repo
+5. Paste into Supabase SQL Editor
+6. Click **Run**
 
 This creates:
-- `clients` table with 1 sample client
-- `projects` table with 3 sample projects
-- `timelines` table with 13 sample phases
-- `files` table with 10 sample files
+- `clients` table with 1 example client (Niche Design Studio)
+- `projects` table with 1 comprehensive project
+- `timelines` table with 19 timeline phases (5 major stages)
+- `files` table with 24 deliverable files
 - RLS policies for security
 - Indexes for performance
 
-### Step 2: Test the Portal
+### Step 2: Test the Portal Locally
 
 1. Install dependencies:
    ```bash
@@ -40,15 +39,24 @@ This creates:
 
 4. Login with:
    ```
-   Email: sarah@techstartup.com
+   Email: tj@nichedesignstudio.com
+   (No password needed in demo)
    ```
 
-5. You'll see:
-   - Dashboard with 3 projects
-   - Brand Identity (65% complete, 5 timeline phases, 4 files)
-   - Website Redesign (20% complete, 5 timeline phases, 3 files)
-   - Marketing Materials (100% complete, 3 timeline phases, 3 files)
-   - Click projects to view their files and timelines
+5. You'll see the complete project:
+   - **Dashboard:** 1 project at 72% completion
+   - **Project Details:** "Niche Design Studio — Brand & Web Identity"
+   - **19 Timeline Phases** across 5 stages:
+     - Phase 1-3: ✅ Complete (Discovery, Visual Identity, Web Design)
+     - Phase 4-5: ⏳ In Progress (Development, Launch)
+   - **24 Files** including:
+     - Brand strategy docs
+     - Logos (all formats)
+     - Typography & color specs
+     - Website wireframes & mockups
+     - Component library
+     - Source code
+     - Social media templates
 
 ## When You Have Real Data
 

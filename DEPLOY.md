@@ -59,10 +59,10 @@ https://client-portal-xyz.vercel.app
 
 Visit it and login with:
 ```
-Email: sarah@techstartup.com
+Email: tj@nichedesignstudio.com
 ```
 
-You should see all 3 sample projects with files and timelines.
+You should see the complete Niche Design Studio brand + web design project with all 19 timeline phases and 24 files.
 
 ## Step 5: Custom Domain (Optional)
 

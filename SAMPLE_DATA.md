@@ -2,57 +2,88 @@
 
 ## What's Included
 
-When you run `SETUP_SCHEMA.sql`, you get one complete example client with realistic projects and files.
+When you run `SETUP_SCHEMA.sql`, you get a **complete example of Niche Design Studio** as both the designer and client, showing a real branding + web design project workflow.
 
 ### Sample Client
 ```
-Email: sarah@techstartup.com
-Name: Sarah Chen
-Company: TechStartup Inc.
+Email: tj@nichedesignstudio.com
+Name: Tj Cichecki
+Company: Niche Design Studio
 ```
 
-### Sample Projects
+### Single Comprehensive Project
 
-#### 1. Brand Identity Design (65% Complete)
+#### Niche Design Studio — Brand & Web Identity (72% Complete)
 - **Status:** In Progress
-- **Timeline:** Jan 15 - Mar 31, 2025
-- **Files:** 4
-  - Brand_Guidelines_v2.pdf (2.4 MB)
-  - Logo_Primary_Files.zip (5.8 MB)
-  - Logo_Secondary_Files.zip (4.2 MB)
-  - Color_Palette_Definition.pdf (1.1 MB)
-- **Timeline Phases:**
-  1. ✅ Discovery & Strategy (Due Jan 31)
-  2. ✅ Logo Design - 3 Concepts (Due Feb 14)
-  3. ⏳ Revisions & Refinement (Due Feb 28)
-  4. ⏳ Brand Guidelines Document (Due Mar 15)
-  5. ⏳ Final Deliverables (Due Mar 31)
+- **Timeline:** Feb 1 - May 15, 2025
+- **Description:** Complete visual identity system and responsive website redesign. Includes brand strategy, logo design, typography system, color palette, brand guidelines, website redesign, and web implementation.
+- **Files:** 24 deliverables across all phases
+- **Timeline Phases:** 19 phases across 5 major project stages
 
-#### 2. Website Redesign (20% Complete)
-- **Status:** Planning
-- **Timeline:** Feb 1 - Apr 30, 2025
-- **Files:** 3
-  - Website_Wireframes_v1.pdf (3.5 MB)
-  - Homepage_Mockup_Desktop.png (8.2 MB)
-  - Homepage_Mockup_Mobile.png (4.1 MB)
-- **Timeline Phases:**
-  1. ⏳ Requirements & Planning (Due Feb 15)
-  2. ⏳ Wireframes & User Flows (Due Mar 1)
-  3. ⏳ Design Mockups (Due Mar 20)
-  4. ⏳ Development & Testing (Due Apr 15)
-  5. ⏳ Launch (Due Apr 30)
+**Phase 1: Discovery & Brand Strategy** ✅
+- ✅ Brand Positioning Workshop (Due Feb 10)
+- ✅ Competitive Analysis & Market Research (Due Feb 15)
 
-#### 3. Marketing Materials (100% Complete)
-- **Status:** Completed
-- **Timeline:** Nov 1, 2024 - Jan 31, 2025
-- **Files:** 3
-  - Business_Cards_Print_Ready.pdf (1.8 MB)
-  - Social_Media_Templates.zip (12.5 MB)
-  - Email_Signature_Template.html (0.2 MB)
-- **Timeline Phases:**
-  1. ✅ Design Concepts (Due Jan 10)
-  2. ✅ Client Approval (Due Jan 20)
-  3. ✅ Final Production Files (Due Jan 31)
+**Phase 2: Visual Identity Design** ✅
+- ✅ Logo Concepts - 3 directions (Due Feb 28)
+- ✅ Logo Refinement & Approval (Due Mar 15)
+- ✅ Color Palette & Typography System (Due Mar 25)
+- ✅ Brand Guidelines Documentation (Due Mar 31)
+
+**Phase 3: Web Design & Strategy** ✅
+- ✅ Website Strategy & User Research (Due Mar 31)
+- ✅ Wireframes & Information Architecture (Due Apr 5)
+- ✅ Homepage & Key Pages Mockups (Due Apr 15)
+
+**Phase 4: Web Development & Testing** ⏳
+- ⏳ Front-end Development (Due Apr 25)
+- ⏳ CMS Integration & Backend Setup (Due May 1)
+- ⏳ Testing, QA & Browser Compatibility (Due May 8)
+
+**Phase 5: Launch & Optimization** ⏳
+- ⏳ SEO Optimization & Analytics Setup (Due May 12)
+- ⏳ Site Launch & Monitoring (Due May 15)
+
+### Key Deliverables Included
+
+**Brand Strategy & Research (3 files)**
+- Brand Strategy Document
+- Competitive Analysis Report
+- Brand Positioning Workshop Notes
+
+**Logo & Brand Identity (3 files)**
+- Logo Primary (all formats: PNG, SVG, EPS, PDF, AI)
+- Logo Secondary & Variations
+- Logo Usage Guidelines
+
+**Typography & Color System (3 files)**
+- Typography System Specs
+- Color Palette Specifications
+- Color Swatches (Adobe format)
+
+**Complete Brand Guidelines (1 file)**
+- Comprehensive Brand Guidelines Master Document
+
+**Web Design Mockups (5 files)**
+- Complete Website Wireframes
+- Homepage Design (Desktop)
+- Homepage Design (Mobile)
+- Services Page Design
+- Portfolio Page Design
+- Contact Form Design
+
+**Web Assets & Components (4 files)**
+- Reusable Component Library
+- Photography Style Guide
+- Icon Set (SVG & PNG)
+
+**Development & Code (2 files)**
+- HTML/CSS Style Guide
+- Website GitHub Repository
+
+**Marketing & Launch (2 files)**
+- Social Media Templates (LinkedIn, Instagram, Twitter, Facebook)
+- Email Signature Template
 
 ---
 
@@ -77,26 +108,50 @@ Company: TechStartup Inc.
 
 4. **Login:**
    ```
-   Email: sarah@techstartup.com
+   Email: tj@nichedesignstudio.com
    (No password needed in demo mode)
    ```
 
 ### What You'll See
 
-✅ Dashboard with stats:
-- Total Projects: 3
-- Completed: 1
+✅ **Dashboard with stats:**
+- Total Projects: 1
+- Completed: 0
 - In Progress: 1
 
-✅ Project list (click to select):
-- Colored cards showing progress
-- Status badges
-- Progress percentage
+✅ **Project card:**
+- Name: "Niche Design Studio — Brand & Web Identity"
+- Status: In Progress
+- Progress: 72%
+- Description of full scope
 
-✅ Selected project details:
-- Files section with download links
-- Timeline with phases
-- Completion status for each phase
+✅ **Selected project details:**
+
+**Files Section (24 files across all categories):**
+- Brand Strategy & Research Documents
+- Logo Files (all formats)
+- Typography & Color Specifications
+- Complete Brand Guidelines
+- 5 Website Design Mockups
+- Component Library
+- Icon Sets
+- Style Guides
+- Source Code Repository
+- Marketing Templates
+- Email Assets
+
+**Timeline Section (19 phases):**
+- Phase 1: Discovery & Brand Strategy (3 phases, ✅ all complete)
+- Phase 2: Visual Identity Design (4 phases, ✅ all complete)
+- Phase 3: Web Design & Strategy (3 phases, ✅ all complete)
+- Phase 4: Web Development & Testing (3 phases, ⏳ in progress)
+- Phase 5: Launch & Optimization (2 phases, ⏳ pending)
+
+Each phase shows:
+- Phase name
+- Due date
+- Completion status (✅ or ⏳)
+- Visual timeline indicator
 
 ---
 
