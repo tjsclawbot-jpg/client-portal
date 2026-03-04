@@ -256,7 +256,7 @@ INSERT INTO files (project_id, file_name, file_type, file_url, file_size_mb, des
   'brand_guide',
   'https://example.com/files/logo-guidelines.pdf',
   4.1,
-  'Detailed logo usage rules, clear space, sizing, color variations, and don'ts'
+  'Detailed logo usage rules, clear space, sizing, color variations, and dos/don''ts'
 ),
 
 -- Typography & Color System
