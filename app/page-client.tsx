@@ -95,33 +95,40 @@ export function DashboardClient() {
         if (projectsData && projectsData.length > 0) {
           setProjects(projectsData)
           setSelectedProject(projectsData[0])
-          
-          // Load timelines for first project
-          const { data: timelinesData } = await supabase
-            .from('timelines')
-            .select('*')
-            .eq('project_id', projectsData[0].id)
-            .order('order', { ascending: true })
-          
-          if (timelinesData) {
-            setTimelines(timelinesData)
-          }
-
-          // Load files for first project
-          const { data: filesData } = await supabase
-            .from('files')
-            .select('*')
-            .eq('project_id', projectsData[0].id)
-            .order('uploaded_at', { ascending: false })
-          
-          if (filesData) {
-            setFiles(filesData)
-          }
+          await loadProjectDetails(projectsData[0].id)
         }
       }
     } catch (err) {
       console.error('Error loading data:', err)
       setError('Failed to load client data')
+    }
+  }
+
+  const loadProjectDetails = async (projectId: string) => {
+    try {
+      // Load timelines for project
+      const { data: timelinesData } = await supabase
+        .from('timelines')
+        .select('*')
+        .eq('project_id', projectId)
+        .order('order', { ascending: true })
+      
+      if (timelinesData) {
+        setTimelines(timelinesData)
+      }
+
+      // Load files for project
+      const { data: filesData } = await supabase
+        .from('files')
+        .select('*')
+        .eq('project_id', projectId)
+        .order('uploaded_at', { ascending: false })
+      
+      if (filesData) {
+        setFiles(filesData)
+      }
+    } catch (err) {
+      console.error('Error loading project details:', err)
     }
   }
 
@@ -286,6 +293,7 @@ export function DashboardClient() {
                     key={p.id}
                     onClick={() => {
                       setSelectedProject(p)
+                      loadProjectDetails(p.id)
                     }}
                     className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-200 ${
                       selectedProject?.id === p.id
