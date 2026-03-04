@@ -86,16 +86,44 @@ export function DashboardClient() {
         setClient(clientData)
         
         // Load projects
-        const { data: projectsData } = await supabase
+        const { data: projectsData, error: projectsError } = await supabase
           .from('projects')
           .select('*')
           .eq('client_id', clientData.id)
           .order('created_at', { ascending: false })
 
+        if (projectsError) {
+          console.error('Error loading projects:', projectsError)
+          setError('Failed to load projects')
+          return
+        }
+
         if (projectsData && projectsData.length > 0) {
           setProjects(projectsData)
           setSelectedProject(projectsData[0])
-          await loadProjectDetails(projectsData[0].id)
+          
+          // Load timelines and files for first project
+          const { data: timelinesData } = await supabase
+            .from('timelines')
+            .select('*')
+            .eq('project_id', projectsData[0].id)
+            .order('order', { ascending: true })
+          
+          if (timelinesData) {
+            setTimelines(timelinesData)
+            console.log('Loaded timelines:', timelinesData.length)
+          }
+
+          const { data: filesData } = await supabase
+            .from('files')
+            .select('*')
+            .eq('project_id', projectsData[0].id)
+            .order('uploaded_at', { ascending: false })
+          
+          if (filesData) {
+            setFiles(filesData)
+            console.log('Loaded files:', filesData.length)
+          }
         }
       }
     } catch (err) {
